@@ -280,6 +280,8 @@ header nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -292,6 +294,7 @@ header nav ul li a {
   font-size: 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 header nav ul li a:hover {
   border-bottom: 1px solid black;
@@ -375,6 +378,8 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -382,24 +387,41 @@ main {
 }
 .featured .featured-collection .featured-items {
   border: 1px solid #666;
+  max-width: calc(16.666% - 20px); /* Set maximum width for each item to display 6 items */
+  -ms-flex-preferred-size: calc(16.666% - 20px);
+      flex-basis: calc(16.666% - 20px); /* Adjust initial size to create 6-column layout */
+  margin-bottom: 20px;
+}
+@media (max-width: 1200px) {
+  .featured .featured-collection .featured-items {
+    max-width: calc(20% - 20px); /* Adjust for larger screens to show 5 items */
+    -ms-flex-preferred-size: calc(20% - 20px);
+        flex-basis: calc(20% - 20px);
+  }
 }
 .featured .featured-collection .featured-items .product {
   width: 100%;
+  max-width: 100%;
   height: auto;
 }
 .featured .featured-collection .featured-items .product-detials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 0rem 1.2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.8rem;
 }
 .featured .featured-collection .featured-items .product-detials img {
-  margin: 1rem;
-  height: 2rem;
+  margin-top: 0.5rem;
+  height: 1.5rem;
   border: 1px solid #666;
 }
