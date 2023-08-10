@@ -1,0 +1,28 @@
+/* ------------------------------ Color Palette ----------------------------- */
+
+$pink: #eba6aa;
+$dark-grey: #333;
+$light-grey: #666;
+$blue: #88cce2;
+$white: #fff;
+$beige: #d7b89c;
+
+/* ---------------------------- Text Style Catalog --------------------------- */
+
+$baseFont: 'Poppins', sans-serif;
+
+/* --------------------------------- Mixins --------------------------------- */
+
+@mixin aro-button {
+  color: $white;
+  background-color: #14171f;
+  line-height: 2.9rem;
+  text-decoration: none;
+  border: 1px solid #faba63;
+  font-family: $baseFont;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $details;
+    transition: .2s;
+  }
+}
