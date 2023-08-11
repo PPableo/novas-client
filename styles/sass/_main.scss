@@ -5,7 +5,7 @@ main {
 }
 
 .categories {
-  height: 50vh;
+  height: auto;
   display: flex;
   align-items: center;
 
@@ -38,41 +38,31 @@ main {
   }
 }
 
-// .featured {
-//     height: 50vh;
-
-//     .featured-collection {
-//         display: flex;
-//         justify-content: space-between;
-//         gap: 20px;
-        
-//         .featured-items {
-//             border: 1px solid $light-grey;
-//             overflow: none;
-
-//             .product {
-//                 max-width: 100%;
-//                 height: auto;
-
-//             }
-//             .product-detials {
-//                 display: flex;
-//                 align-items: center;
-//                 justify-content: space-around;
-//                 padding: 0rem 1.2rem;
-
-//                 img {
-//                     margin: 1rem;
-//                     height: 2rem;
-//                     border: 1px solid $light-grey;
-//                 }
-//             }
-//         }
-//     }
-// }
-
 .featured {
-    height: 50vh;
+    height: auto;
+
+  .title {
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 3rem 0rem;
+    
+    .underlined {
+      position: relative; /* Establish positioning context for pseudo-element */
+    }
+    
+    .underlined::after {
+      content: ""; /* Create the line using a pseudo-element */
+      position: absolute; /* Position the line relative to the title */
+      left: 65px; /* Position the line at the left edge of the title */
+      bottom: -5px; /* Adjust the distance of the line from the text */
+      width: 45%; /* Set the width of the line (adjust as needed) */
+      display: flex;
+      text-align: center;
+      border-bottom: 2px solid #000; /* Style the line */
+    }
+
+  }
 
     .featured-collection {
         display: flex;
@@ -97,19 +87,68 @@ main {
                 height: auto;
             }
 
-            .product-detials {
+            .product-details {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+                justify-content: space-between;
                 padding: 0.8rem;
+                align-items: center;
+
+                .product-name {
+                  font-size: 1rem;
+
+                  p {
+                    margin: .3rem 0rem;
+                  }
+                }
 
                 img {
-                    margin-top: 0.5rem;
-                    height: 1.5rem;
+                    width: 15%;
+                    height: auto;
                     border: 1px solid $light-grey;
                 }
             }
         }
     }
 }
+
+.promotions {
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+button {
+  text-decoration: none;
+  background-color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem 1.7rem;
+  color: #000;
+  border: 2px solid $light-grey;
+}
+
+.promo {
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: 30% 70%; /* 30/70 split */
+  gap: 10px; /* Space between images */
+  min-height: 50vw;
+}
+
+.promo-1,
+.promo-2 {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.promo-1 {
+  background-image: url('/assets/vert1.jpg');
+}
+
+.promo-2 {
+  background-image: url('/assets/vert2.jpg');
+}
+
