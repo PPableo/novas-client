@@ -331,6 +331,8 @@ main {
 }
 
 .categories {
+  padding: 5vw 10vw;
+  min-height: 50vh;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -372,6 +374,7 @@ main {
 }
 
 .featured {
+  min-height: 50vh;
   height: auto;
 }
 .featured .title {
@@ -450,6 +453,7 @@ main {
 }
 
 .promotions {
+  min-height: 50vh;
   margin-top: 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -462,8 +466,7 @@ main {
           justify-content: center;
   text-align: center;
 }
-
-button {
+.promotions button {
   text-decoration: none;
   background-color: #fff;
   font-size: 1.5rem;
@@ -471,27 +474,53 @@ button {
   color: #000;
   border: 2px solid #666;
 }
-
-.promo {
-  margin-top: 10%;
+.promotions .promo {
+  margin-top: 2%;
   display: grid;
-  grid-template-columns: 30% 70%; /* 30/70 split */
-  gap: 10px; /* Space between images */
+  grid-template-columns: 100%; /* Full width by default */
+  gap: 2%; /* Space between images */
   min-height: 50vw;
+  padding: 5vw 10vw;
 }
-
-.promo-1,
-.promo-2 {
+.promotions .promo-1, .promotions .promo-2 {
+  position: relative;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center center;
 }
-
-.promo-1 {
+.promotions .promo-1 .promo-details-1, .promotions .promo-1 .promo-details-2, .promotions .promo-2 .promo-details-1, .promotions .promo-2 .promo-details-2 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+}
+.promotions .promo-1 .promo-details-1, .promotions .promo-2 .promo-details-1 {
+  bottom: 15%;
+}
+.promotions .promo-1 .promo-details-2, .promotions .promo-2 .promo-details-2 {
+  top: 15%;
+  border: 2px solid #fff;
+  padding: 2.5rem;
+}
+.promotions .promo-1 .promo-details-2 p, .promotions .promo-2 .promo-details-2 p {
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.promotions .promo-1 .promo-details-2 p span, .promotions .promo-2 .promo-details-2 p span {
+  font-size: 5rem;
+  font-weight: bolder;
+}
+.promotions .promo-1 {
   background-image: url("/assets/vert1.jpg");
 }
-
-.promo-2 {
+.promotions .promo-2 {
   background-image: url("/assets/vert2.jpg");
+}
+@media (min-width: 768px) {
+  .promotions .promo {
+    grid-template-columns: 30% 70%;
+  }
 }
